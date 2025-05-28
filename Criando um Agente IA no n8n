@@ -1,0 +1,70 @@
+Perfeito, Sarah! Com base nos tópicos da sua segunda seção do curso, aqui vai um **passo a passo de como você criou um agente de IA no n8n, incluindo a integração com planilhas e a primeira automação:
+
+---
+
+🧠 Passo a Passo — Criando um Agente IA no n8n
+
+🚀 Etapa 1: Criando a Primeira Automação
+
+1. Acesse seu ambiente do n8n (cloud ou local).
+2. Clique em “New Workflow” para iniciar um fluxo.
+3. Adicione um nó de gatilho (**Trigger**), como:
+
+   Webhook (se quiser acionar por uma URL).
+   Schedule (para rodar automaticamente em horários definidos).
+4. Configure o gatilho de acordo com sua necessidade.
+
+---
+
+📊 Etapa 2: Integrando com Planilhas
+
+1. Clique em **“+”** para adicionar um nó.
+2. Busque por **Google Sheets** ou outro serviço de planilha que usa.
+3. Conecte sua conta do Google (ou configure uma API Key/credencial).
+4. Configure a ação, como:
+
+   Read Rows – Ler dados da planilha.
+   Append Row – Inserir novas informações.
+5. Defina qual planilha e aba serão utilizadas.
+6. Teste a conexão para garantir que os dados estão sendo puxados corretamente.
+
+---
+
+ 🤖 Etapa 3: Integrando com um Agente IA
+
+1. Adicione um novo nó de IA:
+
+    Pode ser um nó de OpenAI, GPT-4, Hugging Face, ou qualquer outro serviço de IA disponível no n8n.
+2. Configure a chave de API do serviço de IA.
+3. No campo de prompt, envie informações vindas da planilha ou de outro input. Exemplo:
+
+   ```
+   Crie uma resposta para um cliente com base nas seguintes informações: {{ $json["Nome"] }}, {{ $json["Pergunta"] }}
+   ```
+4. Defina os parâmetros do modelo, como:
+
+   * Modelo (ex.: `gpt-3.5-turbo`, `gpt-4`).
+   * Temperatura (criatividade da resposta).
+   * Máximo de tokens (limite de texto na resposta).
+5. Teste para verificar se a IA está respondendo corretamente.
+
+---
+
+ 🔗 Etapa 4: Finalizando e Automatizando
+
+1. Conecte o output do agente IA para outro nó, como:
+
+   * Envio de e-mail (Gmail ou **SMTP).
+   * Inserção do resultado na mesma planilha ou em outra.
+   * Mensagem via Telegram, Slack ou WhatsApp.
+2. Clique em **“Activate”** no topo do fluxo para colocar a automação para rodar automaticamente.
+3. Teste o fluxo completo: insira um dado na planilha ou acione o webhook e veja o agente IA gerar a resposta.
+
+---
+
+ 🗨️ Etapa 5: Chat e Aprendizados
+
+* Revise os pontos que funcionaram e os que podem ser otimizados.
+* Verifique se há melhorias no prompt para IA gerar respostas mais precisas.
+* Avalie como expandir: adicionar mais fontes de dados, APIs, ou criar novas automações conectadas.
+
